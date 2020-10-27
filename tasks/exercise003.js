@@ -23,6 +23,23 @@
 
 function rowWeights(array){
     // Your code here!
+
+    let team1weight = 0;
+    let team2weight = 0;
+
+    //loop and do calculations
+    for (let [key, number] of array.entries()){
+        if((key+1) % 2 != 0){
+            team1weight = team1weight + number;
+        } else {
+            team2weight = team2weight + number;
+        }
+       // console.log(key);
+    }
+
+    const arrWeights = [team1weight, team2weight];
+    //console.log(arrWeights);
+    return arrWeights;
 }
 
 module.exports = {
