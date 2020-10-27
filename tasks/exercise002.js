@@ -4,6 +4,11 @@
 
 function past(h, m, s){
     // Your code here!
+ 
+    let myMiliseconds = ( h*3600 + m*60 + s ) * 1000;
+
+    //console.log(myMiliseconds);
+    return myMiliseconds;
 }
 
 module.exports = {
