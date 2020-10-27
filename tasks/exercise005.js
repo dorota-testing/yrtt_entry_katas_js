@@ -21,6 +21,15 @@
 
 function mexicanWave(str){
     // Your code here!
+    const myArray = [];
+    if(str.length) {
+        
+        const arrSplit = str.split('');
+
+        console.log(arrSplit);
+    }
+    console.log(myArray);
+    return myArray;
 }
 
 module.exports = {
