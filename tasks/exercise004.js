@@ -5,11 +5,22 @@ function pigLatin(str){
     // turn into arrays with separate words
     const arrWords = str.split(' ');
     const myArray = [];
-    //loop through words
+    const reg = /[.,:!?]/gu;
+    //loop through arrWords
     for (const word of arrWords){
-        let wordEnd = word.substring(0, 1) + 'ay';
-        let wordStart = word.substring(1) ;
-        //console.log(wordEnd);
+        //check for punctuation
+        let strPunctuation = '';
+        let myWord = word;
+        let arrPunct = word.match(reg);
+        if(arrPunct != null){
+            //console.log(arrPunct.length);
+            let cutOff = word.length - arrPunct.length;
+            strPunctuation = word.substring(cutOff);
+            myWord = word.substring(0, cutOff);
+        }
+        let wordEnd = myWord.substring(0, 1) + 'ay' + strPunctuation;
+        let wordStart = myWord.substring(1);
+        //console.log(myWord);
         myArray.push(wordStart+wordEnd);
     }
 
