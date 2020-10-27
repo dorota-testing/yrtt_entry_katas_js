@@ -8,7 +8,20 @@
 function singles(arr){
     if (arr === undefined) throw new Error("array is required");
     // Your code here!
-    console.log('function singles has just run');
+    const myArray = [];
+    let myNumber = 0;
+    for (const number of arr){
+        if(myArray.includes(number) === true){
+            myNumber = myNumber - number;
+        } else {
+            myNumber = myNumber + number;
+        }
+        myArray.push(number);
+    }
+
+    //console.log(myArray);
+    //console.log(myNumber);
+    return myNumber;
 }
 
 module.exports = {
