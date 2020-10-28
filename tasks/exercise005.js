@@ -22,13 +22,30 @@
 function mexicanWave(str){
     // Your code here!
     const myArray = [];
-    if(str.length) {
-        
+    //check if not empty
+    if(str.length > 0) {       
         const arrSplit = str.split('');
-
-        console.log(arrSplit);
+        let outerLoop = arrSplit.length;
+        // run outer loop
+        //console.log(outerLoop);
+        for (let i = 0; i < outerLoop; i += 1) {
+            //run inner loop
+            let myPhrase = '';
+            for (let [key, character] of arrSplit.entries()){
+                
+                if(character.match(/[a-z]/) && key == i){
+                    character = character.toUpperCase();
+                    //console.log(i);
+                }
+                myPhrase += character;
+            }
+            if(str != myPhrase){
+                myArray.push(myPhrase);
+            }
+            //console.log(myPhrase);
+        }
     }
-    console.log(myArray);
+    //console.log(myArray);
     return myArray;
 }
 
